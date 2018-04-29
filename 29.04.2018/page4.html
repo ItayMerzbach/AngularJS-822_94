@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+
+        //to add comments use: http://usejsdoc.org/ 
+        //--------------class (E6 - 2015)--------------------------
+
+        /**
+        * @class Person - represnts a single person
+        */
+
+        //בתוך מחלקה אפשר להגדיר משתנים ישירות בתוך פונקציה או בתוך הבנאי
+        //this הגדרת משתנה ברמת המחלקה מתבצעת באמצעות שימוש בקידומת 
+        //-----------------------------
+        //set + get דבר נוסף המתאפשר במחלקות הוא שימוש ב
+        //הם מילים שמורות set + get 
+
+        class Person {
+
+            //set creates a property with the name "age1"
+            //when we create an object of this class
+            //we can assign with the = opertor a value to "age1"
+            set age1(val) {
+                this.age2 = (val >= 0 && val <= 120) ? val : 0;
+            }
+
+            get age1() {
+                return this.age2;
+            }
+
+
+            setAdress(val) {
+                this.city =val;
+            }
+
+            /**
+            * @param name - string 
+            */
+            constructor(name) {
+                this.city = "tel aviv";
+                this.name = name;
+            }
+        }
+
+        //--------------Function constructor-----------------------
+        function Student() {
+            this.name = "Shaked";
+            this.grade = 100;
+            this.isMale = true;
+            this.hobies = [
+                "Music",
+                "Sport"
+            ],
+                this.address = {
+                    "city": "tel-aviv",
+                    "street": "Homa Umigdal",
+                    "houseNumber": 29
+                }
+        }
+
+        var student1 = new Student();
+
+        console.log(student1 instanceof Student);  //--> true
+
+
+        var person = new Person("Alice");
+        
+        person.age1 = -4;
+        person.setAdress("London");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

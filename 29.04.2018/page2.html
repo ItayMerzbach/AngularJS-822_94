@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+
+        //-------------------value type does not change other copies---------------------
+
+        var a1 = 3;  //a1 is value type (stack)
+        var a2 = a1;
+        console.log(`a1 is ${a1} , a2 is ${a2}`);  //--> a1 is 3 , a2 is 3
+
+
+        a2 = 4;
+        console.log(`a1 is ${a1} , a2 is ${a2}`);  //--> a1 is 3 , a2 is 4
+
+
+
+        //-------------------ref type does change other copies---------------------
+
+        var arr1 = [1, 2];
+        var arr2 = arr1;
+        console.log(`arr1 is ${arr1} , arr2 is ${arr2}`);  //--> arr1 is 1,2 , arr2 is 1,2
+
+
+        arr2[0] = 4;
+        console.log(`arr1 is ${arr1} , arr2 is ${arr2}`);  //--> arr1 is 4,2 , arr2 is 4,2
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
