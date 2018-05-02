@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html ng-app="productsModule">
+
+<head>
+    <style>
+        img {
+            height: 150px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script>
+        var productsModule = angular.module("productsModule", []);
+
+        productsModule.controller("ProductsController", function ($scope) {
+            $scope.title = "Welcome to our store";
+            $scope.products = [
+                {
+                    "name": "Water",
+                    "imgLink": ""
+                },
+                {
+                    "name": "Apple",
+                    "imgLink": ""
+                },
+                {
+                    "name": "Bread",
+                    "imgLink":""
+                }
+            ];
+        })
+    </script>
+</head>
+
+<body>
+    <div ng-controller="ProductsController">
+        <h1>{{title}}</h1>
+        <h3>we have {{products}} products</h3>
+        <table border="1">
+            <tr ng-repeat="item in products">
+                <td>{{item.name}}</td>
+                <td>
+                    <img src="{{item.imgLink}}" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+</html>
