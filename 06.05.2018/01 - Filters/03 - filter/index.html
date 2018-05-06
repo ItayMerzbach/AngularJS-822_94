@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="productsModule">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="productsModule.js"></script>
+</head>
+<body>
+
+    <div style="text-align: center;" ng-controller="ProductsController">
+
+        <label>Search: </label>
+        <!-- Set ng-model="text2Search.productName" for searching only at productName field: -->
+        <input type="text" ng-model="text2Search" autofocus />
+
+        <br />
+        <br />
+
+        <table border="1" align="center">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Image</th>
+            </tr>
+
+            <!-- filter cause to display only the text2Search matching values: -->
+            <tr ng-repeat="item in products | filter: text2Search">
+
+                <td>{{item.productID}}</td>
+
+                <td>{{item.productName}}</td>
+
+                <td>{{item.unitPrice}}</td>
+
+                <td>
+                    <img ng-src="images/{{item.productID}}.jpg" width="100" height="100" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

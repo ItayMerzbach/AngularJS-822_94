@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+
+        //function that does not take any parameters & does not return a value
+        var f1 = function () {
+            alert("f1");
+        };
+
+        var f1Arrow = () => {alert("f1Arrow")}; 
+
+
+        //function that  takes one parameter & does not return a value
+        var f2 = function (num1) {
+            alert("f2 " + num1);
+        };
+
+        var f2Arrow = (num1) => { alert("f2Arrow " + num1); };
+
+
+
+        //function that  takes one parameter & does not return a value
+        var f3 = function (num1) {
+            alert("f3 " + num1);
+        };
+        //if there is only one parameter we can write the param without ()
+        var f3Arrow = num1 => { alert("f2Arrow " + num1); };
+
+
+        //function that  takes two parameters & does return a value
+        var f4 = function (num1, num2) {
+            return num1 + num2;
+        };
+
+        var f4Arrow = (num1, num2) => { return num1 + num2; };
+
+
+
+        //function that  takes two parameters & does return a value
+        var f5 = function (num1, num2) {
+            return num1 + num2;
+        };
+        //if the function's body contains only one command - a return statement
+        //we can writh only the returned value without {return }
+        var f5Arrow = (num1, num2) => num1 + num2; 
+    </script>
+</head>
+
+<body>
+    <button onclick="f1()">func 1</button>
+    <button onclick="f1Arrow()">func 1 Arrow</button>
+
+
+    <button onclick="f2(5)">func 2</button>
+    <button onclick="f2Arrow(5)">func 2 Arrow</button>
+
+
+
+    <button onclick="f3(5)">func 3</button>
+    <button onclick="f3Arrow(5)">func 3 Arrow</button>
+
+
+
+    <button onclick="alert(f4(5,6))">func 4</button>
+    <button onclick="alert(f4Arrow(5,6))">func 4 Arrow</button>
+
+
+    
+    <button onclick="alert(f5(5,6))">func 5</button>
+    <button onclick="alert(f5Arrow(5,6))">func 5 Arrow</button>
+
+</body>
+
+</html>

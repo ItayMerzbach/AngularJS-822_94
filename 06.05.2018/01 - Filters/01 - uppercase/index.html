@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="productsModule">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="productsModule.js"></script>
+</head>
+<body>
+
+    <div style="text-align: center;" ng-controller="ProductsController">
+
+        <table border="1" align="center">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name- Upper</th>
+                <th>Product Name- Lower</th>
+                <th>Unit Price</th>
+                <th>Image</th>
+            </tr>
+            <tr ng-repeat="item in products">
+
+                <td>{{item.productID}}</td>
+
+                <!-- The | sign creates a known filter.
+                    The uppercase turns the data into upper-case: -->
+                <td>{{item.productName | uppercase}}</td>
+
+
+                <!-- The | sign creates a known filter.
+                    The lowercase turns the data into lower-case: -->
+                <td>{{item.productName | lowercase}}</td>
+
+                <td>{{item.unitPrice}}</td>
+
+                <td>
+                    <img ng-src="images/{{item.productID}}.jpg" width="100" height="100" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

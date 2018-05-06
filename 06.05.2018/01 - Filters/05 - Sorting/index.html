@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="productsModule">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="productsModule.js"></script>
+</head>
+<body>
+
+    <div style="text-align: center;" ng-controller="ProductsController">
+
+        <label>Search: </label>
+        <input type="text" ng-model="text2Search" autofocus />
+
+        <br /><br />
+
+        <label>Order By: </label>
+        <select ng-model="productsOrder" ng-init="productsOrder='productName'">
+            <option value="productName">Product Name</option>
+            <option value="unitPrice">Unit Price</option>
+        </select>
+
+        <br /><br />
+
+        <input id="asc" type="radio" ng-model="direction" name="sorting" checked />
+        <label for="asc">Ascending</label>
+
+        <input id="desc" type="radio" ng-model="direction" name="sorting" value="reverse" />
+        <label for="desc">Descending</label>
+
+        <br /><br />
+
+        <table border="1" align="center">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Image</th>
+            </tr>
+
+            <!-- :direction is a sub-filter determines the sorting direction: -->
+            <tr ng-repeat="item in products | filter: text2Search | orderBy: productsOrder:direction">
+
+                <td>{{item.productID}}</td>
+
+                <td>{{item.productName}}</td>
+
+                <td>{{item.unitPrice}}</td>
+
+                <td>
+                    <img ng-src="images/{{item.productID}}.jpg" width="100" height="100" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

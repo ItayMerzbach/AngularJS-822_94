@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html ng-app>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+</head>
+
+<body style="margin:30px; font-size:1.3em">
+
+    <h1>Selection with angular model</h1>
+    <select ng-model="test" ng-init="test='2'">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
+    <p>tets content: {{test}}</p>
+    <hr/>
+
+
+    <h1>limitTo with angular</h1>
+    <input type="number" ng-model="myNum" />
+    <ol>
+        <li ng-repeat="x in ['A','B','C','D','E','F'] | limitTo: myNum">{{x}}</li>
+    </ol>
+    <hr/>
+
+    <h1>orderBy with angular</h1>
+    <select ng-model="selectedOrder" ng-init="test='2'">
+        <option value="num1">num1</option>
+        <option value="num2">num2</option>
+    </select>
+    <table border="1">
+        <tr>
+            <th>num1</th>
+            <th>num2</th>
+        </tr>
+        <tr ng-repeat="x in [{'num1':1,'num2':9},{'num1':2,'num2':8}] | orderBy:selectedOrder">
+            <td>{{x.num1}}</td>
+            <td>{{x.num2}}</td>
+        </tr>
+
+    </table>
+
+
+    <input type="number" ng-model="num3" ng-init="num3=2">
+    <p>{{12.3435896767676767679056890749679|number:num3}}</p>
+
+</body>
+
+</html>
